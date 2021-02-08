@@ -17,6 +17,7 @@ const { type } = require("os");
 //Prompts
 const team = [];
 
+//Manager
 const addManager = [
     {
         name: 'role',
@@ -26,22 +27,82 @@ const addManager = [
     {
         name: 'name',
         type: 'input',
-        message: 'Enter Manager Name:',
+        message: 'Please enter Manager Name:',
     },
     {
         name: 'id',
         type: 'input',
-        message: 'Please enter Employee ID',
+        message: 'Please enter Manager Employee ID',
     },
     {
         name: 'email',
         type: 'input',
-        message: 'Please enter email address',
+        message: 'Please enter Manager Email Address',
     },
     {
         name: 'officenumber',
         type: 'input',
-        message: 'Please enter Office Number',
+        message: 'Please enter Manager Office Number',
+    },
+    {
+        name: 'next',
+        type: 'list',
+        choices: ['Add Engineer', 'Add Intern', 'No More Members to Add'],
+        message: 'Who would you like to add next?',
+    },
+];
+
+//Engineer
+const addEngineer = [
+    {
+        name: 'name',
+        type: 'input',
+        message: 'Please enter Engineer Name',
+    },
+    {
+        name: 'id',
+        type: 'input',
+        message: 'Please enter Engineer id number',
+    },
+    {
+        name: 'email',
+        type: 'input',
+        message: 'Please enter Engineer email',
+    },
+    {
+        name: 'github',
+        type: 'input',
+        message: 'Please enter Engineer GitHub username',
+    },
+    {
+        name: 'next',
+        type: 'list',
+        choices: ['Add Engineer', 'Add Intern', 'No More Members to Add'],
+        message: 'Who would you like to add next?',
+    },
+];
+
+//Intern
+const addIntern = [
+    {
+        name: 'name',
+        type: 'input',
+        message: 'Please enter Intern Name',
+    },
+    {
+        name: 'id',
+        type: 'input',
+        message: 'Please enter Intern id number',
+    },
+    {
+        name: 'email',
+        type: 'input',
+        message: 'Please enter Intern email',
+    },
+    {
+        name: 'school',
+        type: 'input',
+        message: 'Which College or University is the intern currently enrolld in?',
     },
     {
         name: 'next',
