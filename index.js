@@ -12,7 +12,6 @@ const addEngineerCard = require('./src/engineercard');
 const addInternCard = require('./src/interncard');
 const addManagerCard = require('./src/managercard');
 const wrapcards = require('./src/cardwrap');
-const { type } = require("os");
 
 //Prompts
 const team = [];
@@ -111,3 +110,23 @@ const addIntern = [
         message: 'Who would you like to add next?',
     },
 ];
+
+//Application
+ask (addManager)
+
+function ask(questionArr) {
+    inquirer
+        .prompt(questionArr)
+        .then((member) => {
+            team.push(member);
+
+            if (member.next === 'Add Intern') {
+                ask(addEngineer);
+            } else if (member.next === 'Add Intern') {
+                ask(addIntern);
+            } else {
+                createProfile(team);
+            }
+        })
+        .catch((err) => console.log(err));
+}
