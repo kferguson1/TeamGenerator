@@ -120,7 +120,7 @@ function ask(questionArr) {
         .then((member) => {
             team.push(member);
 
-            if (member.next === 'Add Intern') {
+            if (member.next === 'Add Engineer') {
                 ask(addEngineer);
             } else if (member.next === 'Add Intern') {
                 ask(addIntern);
@@ -155,9 +155,9 @@ function createProfile(team) {
     generateHTML(profile);
 }
 
-function generateHTML(profile) {
+function generateHTML(profiles) {
     let profileCard = '';
-    profile.forEach((profile) => {
+    profiles.forEach((profile) => {
         if (profile instanceof Manager) {
             const card = addManagerCard(profile);
             profileCard += card;
