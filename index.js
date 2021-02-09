@@ -132,6 +132,7 @@ function ask(questionArr) {
 }
 
 function createProfile(team) {
+
     const profile = team.map((member) => {
         const { name, id, email } = member;
 
