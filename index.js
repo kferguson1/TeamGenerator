@@ -130,3 +130,26 @@ function ask(questionArr) {
         })
         .catch((err) => console.log(err));
 }
+
+function createProfile(team) {
+    const profile = team.map((member) => {
+        const { name, id, email } = member;
+
+        if (member.hasownproperty('officenumber')) {
+            const { officenumber } = member;
+            return new Manager(name, id, email, officenumber);
+        }
+
+        if (member.hasownproperty('github')) {
+            const { github } = member;
+            return new Engineer(name, id, email, github);
+        }
+
+        if (member.hasownproperty('school')) {
+            const { school } = member;
+            return new Intern(name, id, email, school);
+        }
+    });
+
+    generateHTML(profile);
+}
