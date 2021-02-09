@@ -173,3 +173,10 @@ const newHTML = wrapcards(profileCard);
 
 writeHTML(newHTML);
 };
+
+function writeHTML(newHTML) {
+    fs.writeFile ('./dist/teamprofile.html', newHTML, (err) => {
+        if (err) throw err;
+        console.log('HTML created successfully');
+    })
+};
