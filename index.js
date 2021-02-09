@@ -153,3 +153,23 @@ function createProfile(team) {
 
     generateHTML(profile);
 }
+
+function generateHTML(profile) {
+    let profileCard = '';
+    profile.forEach((profile) => {
+        if (profile instanceof Manager) {
+            const card = addManagerCard(profile);
+            profileCard += card;
+        }   else if (profile instanceof Engineer) {
+            const card = addEngineerCard(profile);
+            profileCard += card;
+        }   else if (profile instanceof Intern) {
+            const card = addInternCard(profile);
+            profileCard += card;
+        }
+    })
+
+const newHTML = wrapcards(profileCard);
+
+writeHTML(newHTML);
+};
